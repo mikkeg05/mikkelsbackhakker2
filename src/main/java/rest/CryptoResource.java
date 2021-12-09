@@ -84,9 +84,9 @@ public class CryptoResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/start")
     public String startTimer(){
-        TimedEvent timedEvent = new TimedEvent();
 
-        timedEvent.run();
+
+        TimedEvent.run();
         return "update of DB started";
     }
 }

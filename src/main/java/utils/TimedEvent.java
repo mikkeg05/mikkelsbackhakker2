@@ -18,9 +18,9 @@ import java.util.concurrent.ScheduledFuture;
 import static java.util.concurrent.TimeUnit.*;
 
 public class TimedEvent {
-     EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-     CryptoFacade crypto = CryptoFacade.getCryptoFacade(emf);
-      public void run() {
+    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+    static CryptoFacade crypto = CryptoFacade.getCryptoFacade(emf);
+    public static void run() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.MILLISECOND, 0);
@@ -41,14 +41,12 @@ public class TimedEvent {
         }
 
     }
-
-   /* public  void imnotsure() {
+/*
+    public static void imnotsure() {
         final ScheduledExecutorService scheduler =
                 Executors.newScheduledThreadPool(1);
 
         final Runnable beeper = new Runnable() {
-
-
             public void run() {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(Calendar.MINUTE, 0);
@@ -71,21 +69,17 @@ public class TimedEvent {
 
             }
         };
-
-    */
-        /*final ScheduledFuture<?> beeperHandle =
+        final ScheduledFuture<?> beeperHandle =
                 scheduler.scheduleAtFixedRate(beeper, 30, 30, SECONDS);
         scheduler.schedule(new Runnable() {
             public void run() {
                 beeperHandle.cancel(true);
             }
         }, 60 * 60, SECONDS);
-
-
     }
 
+ */
 
-         */
 
 
 
