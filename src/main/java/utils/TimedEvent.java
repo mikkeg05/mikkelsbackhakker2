@@ -18,11 +18,11 @@ import java.util.concurrent.ScheduledFuture;
 import static java.util.concurrent.TimeUnit.*;
 
 public class TimedEvent {
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-    static CryptoFacade crypto = CryptoFacade.getCryptoFacade(emf);
+     EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+     CryptoFacade crypto = CryptoFacade.getCryptoFacade(emf);
 
 
-    public static void imnotsure() {
+    public  void imnotsure() {
         final ScheduledExecutorService scheduler =
                 Executors.newScheduledThreadPool(1);
 
