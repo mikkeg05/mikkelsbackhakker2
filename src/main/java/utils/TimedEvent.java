@@ -4,6 +4,7 @@ import dtos.CryptoCombinedDTO;
 import entities.PriceOverTime;
 import facades.CryptoFacade;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.servlet.ServletContextEvent;
@@ -18,9 +19,9 @@ import java.util.concurrent.ScheduledFuture;
 import static java.util.concurrent.TimeUnit.*;
 
 public class TimedEvent {
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-    static CryptoFacade crypto = CryptoFacade.getCryptoFacade(emf);
-    public static void run() {
+
+    public void run(CryptoFacade crypto) {
+
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.MILLISECOND, 0);
