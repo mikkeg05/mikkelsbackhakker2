@@ -86,7 +86,7 @@ public class CryptoResource {
     public String startTimer(){
 
         TimedEvent timer = new TimedEvent();
-        timer.run(FACADE);
+        timer.imnotsure(FACADE);
         return "update of DB started";
     }
 }

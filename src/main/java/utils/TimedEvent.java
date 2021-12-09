@@ -20,30 +20,11 @@ import static java.util.concurrent.TimeUnit.*;
 
 public class TimedEvent {
 
-    public void run(CryptoFacade crypto) {
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.MILLISECOND, 0);
-        calendar.set(Calendar.SECOND, 0);
-        try {
-            List<PriceOverTime> PoTList = new ArrayList<>();
-            List<CryptoCombinedDTO> cryptos = HttpUtils.fetchcryptos(crypto.getCryptoFromDB());
-            for (CryptoCombinedDTO cryptos1 : cryptos) {
-                PoTList.add(new PriceOverTime(cryptos1.getName(), cryptos1.getPrice(), calendar));
-            }
-            crypto.putPriceIntoDB(PoTList);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-    }
-/*
-    public static void imnotsure() {
+
+
+    public static void imnotsure(CryptoFacade crypto) {
         final ScheduledExecutorService scheduler =
                 Executors.newScheduledThreadPool(1);
 
@@ -79,7 +60,7 @@ public class TimedEvent {
         }, 60 * 60, SECONDS);
     }
 
- */
+
 
 
 
